@@ -23,6 +23,10 @@ while a != {}:
     for k, v in a.items():
         min_text = min(a.values())
         if v == min_text:
+            n = v[1][0:]
             with open('finish_file.txt', 'a', encoding='utf-8') as d:
-                d.write(f'{k} \n{v[0]} \n{v[1][0]}\n')
+                d.write(f'{k} \n{v[0]}\n')
+                d.writelines(n)
+                d.write('\n\n')
                 del a[k]
+                break
